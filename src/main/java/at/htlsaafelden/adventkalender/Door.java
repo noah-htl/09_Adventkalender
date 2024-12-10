@@ -21,6 +21,9 @@ public class Door extends AnchorPane {
     @FXML
     private Label label;
 
+    @FXML
+    private BorderPane borderPane;
+
     private int number;
     private boolean open = false;
 
@@ -50,7 +53,7 @@ public class Door extends AnchorPane {
     }
 
     private void open() {
-        this.imageView.getStyleClass().add("open");
+        this.borderPane.getStyleClass().add("open");
     }
 
     public void setNumber(int x) {
