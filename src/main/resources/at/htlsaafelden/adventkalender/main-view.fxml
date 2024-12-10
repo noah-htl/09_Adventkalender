@@ -8,7 +8,7 @@
 
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.htlsaafelden.adventkalender.MainController">
    <children>
-      <GridPane>
+      <GridPane fx:id="gridPane">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -18,13 +18,36 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Door number="1"/>
+            <Door number="1" />
+            <Door number="2" GridPane.columnIndex="1" />
+            <Door number="3" GridPane.columnIndex="2" />
+            <Door number="4" GridPane.columnIndex="3" />
+            <Door number="5" GridPane.columnIndex="4" />
+            <Door number="6" GridPane.columnIndex="5" />
+             <Door number="7" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+             <Door number="8" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+             <Door number="9" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+             <Door number="10" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+             <Door number="11" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+             <Door number="12" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+             <Door number="13" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+             <Door number="14" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+             <Door number="15" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+             <Door number="16" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+             <Door number="17" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+             <Door number="18" GridPane.columnIndex="5" GridPane.rowIndex="2"/>
+             <Door number="19" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+             <Door number="20" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+             <Door number="21" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+             <Door number="22" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+             <Door number="23" GridPane.columnIndex="4" GridPane.rowIndex="3"/>
+             <Door number="24" GridPane.columnIndex="5" GridPane.rowIndex="3"/>
          </children>
       </GridPane>
    </children>

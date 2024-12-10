@@ -22,8 +22,37 @@ public class MainController implements Initializable {
     @FXML
     public AnchorPane anchorPane;
 
+    @FXML
+    public GridPane gridPane;
+
+    private int[] ints;
+
+    public MainController() {
+        ints = new int[24];
+        for (int i = 1; i <= 24; i++) {
+            ints[i-1] = i;
+        }
+
+        Random random = new Random();
+        for (int i = 0; i < 1000; i++) {
+            int a = random.nextInt(24);
+            int b = random.nextInt(24);
+
+            int x = ints[a];
+            ints[a] = ints[b];
+            ints[b] = x;
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        int i = 0;
 
+        for(Node node : gridPane.getChildren()) {
+            if (node instanceof Door door) {
+                door.setNumber(ints[i]);
+                i++;
+            }
+        }
     }
 }
