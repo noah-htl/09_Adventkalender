@@ -1,0 +1,47 @@
+package at.htlsaafelden.adventkalender;
+
+import javafx.beans.property.adapter.JavaBeanIntegerProperty;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Screen;
+
+import java.io.IOException;
+
+public class Door extends AnchorPane {
+
+    @FXML
+    private ImageView imageView;
+
+    private int number;
+
+    public Door() {
+        FXMLLoader fxmlLoader = new FXMLLoader(AdventApplication.class.getResource("door-component.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setClassLoader(getClass().getClassLoader());
+        fxmlLoader.setController(this);
+
+        try {
+            fxmlLoader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void initialize() {
+
+    }
+
+    public void setNumber(int x) {
+        this.number = x;
+        imageView.setImage(new Image(getClass().getResourceAsStream(this.number + ".jpg")));
+    }
+
+    public int getNumber() {
+        return this.number;
+    }
+}
