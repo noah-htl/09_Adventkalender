@@ -55,7 +55,7 @@ public class Door extends AnchorPane {
 
     public void setNumber(int x) {
         this.number = x;
-        imageView.setImage(new Image(getClass().getResourceAsStream(1 + ".jpg")));
+        imageView.setImage(ImageCache.get(1 + ".jpg", Door.class));
         label.setText(String.valueOf(x));
     }
 
