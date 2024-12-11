@@ -3,62 +3,177 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.htlsaafelden.adventkalender.WordleController">
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@wordle.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.htlsaafelden.adventkalender.WordleController">
    <children>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font></Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font></Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font></Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font></Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font></Label>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
-            <Label text="?" />
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="label" text="?">
+               <font>
+                  <Font name="Monospaced Regular" size="60.0" />
+               </font>
+            </Label>
          </children>
       </HBox>
    </children>

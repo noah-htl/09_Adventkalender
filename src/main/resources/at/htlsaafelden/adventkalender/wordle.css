@@ -1,0 +1,4 @@
+.label {
+    -fx-border-color: red;
+    -fx-min-width: 74px;
+}
