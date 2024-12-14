@@ -1,3 +1,7 @@
 .open {
     -fx-background-color: red;
 }
+
+.locked {
+    -fx-background-color: gray;
+}

@@ -12,6 +12,8 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
 
 public class Door extends AnchorPane {
 
@@ -44,9 +46,22 @@ public class Door extends AnchorPane {
 
     }
 
+    private boolean canOpen() {
+        Calendar calendar = Calendar.getInstance();
+
+        if(calendar.get(Calendar.MONTH) == Calendar.DECEMBER && calendar.get(Calendar.DAY_OF_MONTH) >= this.number) {
+            this.borderPane.getStyleClass().remove("locked");
+            return true;
+        }
+
+        this.borderPane.getStyleClass().add("locked");
+
+        return false;
+    }
+
     @FXML
     public void onClick() {
-        if(!this.open) {
+        if(!this.open && canOpen()) {
             this.open = true;
             this.open();
 
@@ -77,13 +92,15 @@ public class Door extends AnchorPane {
 
     public void setNumber(int x) {
         this.number = x;
-        imageView.setImage(ImageCache.get(1 + ".jpg", Door.class));
+        imageView.setImage(ImageCache.get(x + ".png", Door.class));
         label.setText(String.valueOf(x));
 
         if(FileLoader.load(this.number)) {
             this.open = true;
             this.borderPane.getStyleClass().add("open");
         }
+
+        canOpen();
     }
 
     public int getNumber() {
