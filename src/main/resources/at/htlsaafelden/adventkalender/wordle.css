@@ -5,4 +5,17 @@
 
 .current {
     -fx-border-width: 5px;
+    -fx-min-height: 66px;
+}
+
+.correct_position {
+    -fx-background-color: green;
+}
+
+.in_word {
+    -fx-background-color: yellow;
+}
+
+.not_used {
+    -fx-background-color: grey;
 }

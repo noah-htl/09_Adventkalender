@@ -11,12 +11,16 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class WordleController implements Initializable {
     private Stage stage = null;
     private int line = 0;
     private int column = 0;
+    private int number;
+
+    private WordleGame currentGame;
 
     @FXML
     private VBox vBox;
@@ -49,10 +53,11 @@ public class WordleController implements Initializable {
             newLabel.getStyleClass().add("current");
         }
 
+        currentGame = new WordleGame("ABCD" + this.number);
+
         stage.getScene().setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
-                System.out.println(keyEvent.getCharacter());
                 if(keyEvent.getCharacter().replaceAll("\\p{C}", "").length() == 1) {
                     Label oldLabel = getLabel(line, column);
                     if(oldLabel != null) {
@@ -92,6 +97,8 @@ public class WordleController implements Initializable {
                         oldLabel.getStyleClass().remove("current");
                     }
 
+                    _handleLine(line);
+
                     line++;
                     column = 0;
                     if(line >= 6) {
@@ -107,11 +114,39 @@ public class WordleController implements Initializable {
         });
     }
 
+    private void _handleLine(int line) {
+        char[] characters = new char[5];
+
+        for (int i = 0; i < 5; i++) {
+            Label label = getLabel(line, i);
+            characters[i] = label.getText().charAt(0);
+        }
+
+        String s = new String(characters);
+
+        WordleGame.Position[] positions = this.currentGame.guess(s);
+        //System.out.println(Arrays.toString(positions));
+
+        for (int i = 0; i < 5; i++) {
+            Label label = getLabel(line, i);
+
+            label.getStyleClass().add(switch (positions[i].characterType()) {
+                case CORRECT_POSITION -> "correct_position";
+                case IN_WORD -> "in_word";
+                case NOT_USED -> "not_used";
+            });
+        }
+    }
+
     public void setStage(Stage stage) {
         boolean h = this.stage == null;
         this.stage = stage;
         if(h) {
             init();
         }
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 }

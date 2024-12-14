@@ -67,6 +67,7 @@ public class Door extends AnchorPane {
         stage.setTitle("Wordle!");
         stage.setScene(scene);
         WordleController controller = fxmlLoader.getController();
+        controller.setNumber(this.number);
         controller.setStage(stage);
         stage.show();
     }
