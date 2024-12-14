@@ -1,5 +1,6 @@
 package at.htlsaafelden.adventkalender;
 
+import at.htlsaafelden.adventkalender.File.FileLoader;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -48,6 +49,8 @@ public class Door extends AnchorPane {
         if(!this.open) {
             this.open = true;
             this.open();
+
+            FileLoader.save(this.number, this.open);
         }
     }
 
@@ -76,6 +79,11 @@ public class Door extends AnchorPane {
         this.number = x;
         imageView.setImage(ImageCache.get(1 + ".jpg", Door.class));
         label.setText(String.valueOf(x));
+
+        if(FileLoader.load(this.number)) {
+            this.open = true;
+            this.borderPane.getStyleClass().add("open");
+        }
     }
 
     public int getNumber() {
