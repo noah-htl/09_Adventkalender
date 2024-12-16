@@ -11,8 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.Arrays;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class WordleController implements Initializable {
     private Stage stage = null;
@@ -53,7 +52,8 @@ public class WordleController implements Initializable {
             newLabel.getStyleClass().add("current");
         }
 
-        currentGame = new WordleGame("ABCD" + this.number);
+
+        currentGame = new WordleGame(WordleLoader.getDailyWordle(this.number));
 
         stage.getScene().setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
