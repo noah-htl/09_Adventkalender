@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<fx:root minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onClick" prefHeight="150.0" prefWidth="150.0" stylesheets="@door.css" type="AnchorPane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="root" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onClick" prefHeight="150.0" prefWidth="150.0" stylesheets="@door.css" type="AnchorPane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane fx:id="borderPane" prefHeight="150.0" prefWidth="150.0">
          <center>
             <ImageView fx:id="imageView" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
          </center>
-         <top>
-            <Label fx:id="label" text="???" BorderPane.alignment="CENTER" />
-         </top>
+         <bottom>
+            <Label fx:id="label" text="???" BorderPane.alignment="TOP_CENTER">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin></Label>
+         </bottom>
+         <padding>
+            <Insets bottom="40.0" />
+         </padding>
       </BorderPane>
    </children>
 </fx:root>

@@ -1,6 +1,8 @@
 package at.htlsaafelden.adventkalender;
 
 import at.htlsaafelden.adventkalender.File.FileLoader;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -24,6 +26,9 @@ public class Door extends AnchorPane {
     private Label label;
 
     @FXML
+    private AnchorPane root;
+
+    @FXML
     private BorderPane borderPane;
 
     private int number;
@@ -43,7 +48,11 @@ public class Door extends AnchorPane {
     }
 
     public void initialize() {
+        root.widthProperty().addListener((_, _, t1) -> borderPane.setPrefWidth(t1.doubleValue()));
+        root.heightProperty().addListener((_, _, t1) -> borderPane.setPrefHeight(t1.doubleValue()));
 
+        borderPane.setPrefWidth(root.widthProperty().get());
+        borderPane.setPrefHeight(root.heightProperty().get());
     }
 
     private boolean canOpen() {
