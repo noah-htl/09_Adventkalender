@@ -54,6 +54,25 @@ public class Door extends AnchorPane {
         heights.put(3, 41);
         heights.put(4, 47);
         heights.put(5, 48);
+        heights.put(6, 38);
+        heights.put(7, 41);
+        heights.put(8, 51);
+        heights.put(9, 48);
+        heights.put(10, 42);
+        heights.put(11, 38);
+        heights.put(12, 38);
+        heights.put(13, 51);
+        heights.put(14, 49);
+        heights.put(15, 43);
+        heights.put(16, 48);
+        heights.put(17, 38);
+        heights.put(18, 50);
+        heights.put(19, 49);
+        heights.put(20, 45);
+        heights.put(21, 45);
+        heights.put(22, 49);
+        heights.put(23, 39);
+        heights.put(24, 25);
     }
 
     public Door() {

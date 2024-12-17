@@ -25,7 +25,7 @@ public class WordleGame {
 
         for (int i = 0; i < 5; i++) {
             Character guessChar =  toUpper(s).charAt(i);
-            Character resultChar = result.toUpperCase().charAt(i);
+            Character resultChar = toUpper(result).charAt(i);
 
             if(guessChar.equals(resultChar)) {
                 positions[i] = new Position(guessChar, CharacterType.CORRECT_POSITION);
@@ -37,7 +37,7 @@ public class WordleGame {
             Character guessChar = toUpper(s).charAt(i);
 
             for (int j = 0; j < 5; j++) {
-                if (guessChar.equals(result.toUpperCase().charAt(j)) && !usedChars[j]) {
+                if (guessChar.equals(toUpper(result).charAt(j)) && !usedChars[j]) {
                     positions[i] = new Position(guessChar, CharacterType.IN_WORD);
                     usedChars[j] = true;
                     break;
