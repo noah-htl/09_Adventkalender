@@ -18,6 +18,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Door extends AnchorPane {
 
@@ -43,6 +45,16 @@ public class Door extends AnchorPane {
 
     private ObservableValueImpl<Boolean> open = new ObservableValueImpl<>(false);
     private ObservableValueImpl<Boolean> locked = new ObservableValueImpl<>(false);
+
+    private static final Map<Integer, Integer> heights = new HashMap<>();
+
+    static {
+        heights.put(1, 42);
+        heights.put(2, 53);
+        heights.put(3, 41);
+        heights.put(4, 47);
+        heights.put(5, 48);
+    }
 
     public Door() {
         FXMLLoader fxmlLoader = new FXMLLoader(AdventApplication.class.getResource("door-component.fxml"));
@@ -77,10 +89,14 @@ public class Door extends AnchorPane {
 
         this.open.addListener((_, _, t1) -> {
             if (t1) {
+                Integer h = heights.get(this.number);
+                if(h == null) {
+                    h = 50;
+                }
                 borderPane.getStyleClass().add("open");
-                imageView.setClip(new Rectangle(0,50,100,100));
+                imageView.setClip(new Rectangle(0,h,100,100));
 
-                Rectangle rectangle2 = new Rectangle(0,0,100,50);
+                Rectangle rectangle2 = new Rectangle(0,0,100,h);
                 imageViewTop.setClip(rectangle2);
                 imageViewTop.setOpacity(1);
             } else {
@@ -121,7 +137,7 @@ public class Door extends AnchorPane {
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), Screen.getPrimary().getBounds().getWidth() / 2,
-                    Screen.getPrimary().getBounds().getHeight() / 2);
+                    Screen.getPrimary().getBounds().getHeight() / 1.5);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -1,11 +1,12 @@
 .label {
-    -fx-border-color: red;
+    -fx-border-color: grey;
     -fx-min-width: 74px;
 }
 
 .current {
-    -fx-border-width: 5px;
-    -fx-min-height: 66px;
+    -fx-border-color: black;
+    -fx-border-width: 3px;
+    -fx-min-height: 70px;
 }
 
 .correct_position {
@@ -17,5 +18,5 @@
 }
 
 .not_used {
-    -fx-background-color: grey;
+    -fx-background-color: darkred;
 }
