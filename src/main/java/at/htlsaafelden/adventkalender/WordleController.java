@@ -115,14 +115,14 @@ public class WordleController implements Initializable {
     }
 
     private void _handleLine(int line) {
-        char[] characters = new char[5];
+        StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < 5; i++) {
             Label label = getLabel(line, i);
-            characters[i] = label.getText().charAt(0);
+            sb.append(label.getText().charAt(0));
         }
 
-        String s = new String(characters);
+        String s = sb.toString();
 
         WordleGame.Position[] positions = this.currentGame.guess(s);
         //System.out.println(Arrays.toString(positions));

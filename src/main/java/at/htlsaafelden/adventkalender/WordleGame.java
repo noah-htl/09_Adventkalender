@@ -1,11 +1,18 @@
 package at.htlsaafelden.adventkalender;
 
+import java.util.Locale;
+
 public class WordleGame {
     private final String result;
 
     public WordleGame(String result) {
         this.result = result;
         System.out.println(result);
+    }
+
+    private String toUpper(String in) { // fuck unicode
+        String temp = in.replace('ß', '\0').replace('ä', '\1').replace('ö', '\2').replace('ü', '\3').toUpperCase();
+        return temp.replace('\0', 'ß').replace('\1', 'Ä').replace('\2', 'Ö').replace('\3', 'Ü');
     }
 
     public Position[] guess(String s) {
@@ -17,7 +24,7 @@ public class WordleGame {
         Boolean[] usedChars = new Boolean[] {false, false, false, false, false};
 
         for (int i = 0; i < 5; i++) {
-            Character guessChar =  s.toUpperCase().charAt(i);
+            Character guessChar =  toUpper(s).charAt(i);
             Character resultChar = result.toUpperCase().charAt(i);
 
             if(guessChar.equals(resultChar)) {
@@ -27,7 +34,7 @@ public class WordleGame {
         }
 
         for (int i = 0; i < 5; i++) {
-            Character guessChar =  s.toUpperCase().charAt(i);
+            Character guessChar = toUpper(s).charAt(i);
 
             for (int j = 0; j < 5; j++) {
                 if (guessChar.equals(result.toUpperCase().charAt(j)) && !usedChars[j]) {
@@ -40,7 +47,7 @@ public class WordleGame {
 
         for (int i = 0; i < 5; i++) {
             if(positions[i] == null) {
-                positions[i] = new Position(s.toUpperCase().charAt(i), CharacterType.NOT_USED);
+                positions[i] = new Position(toUpper(s).charAt(i), CharacterType.NOT_USED);
             }
         }
 
