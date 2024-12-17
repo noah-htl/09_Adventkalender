@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Screen;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -24,6 +25,9 @@ public class MainController implements Initializable {
 
     @FXML
     public GridPane gridPane;
+
+    @FXML
+    public ImageView imageView;
 
     private int[] ints;
 
@@ -54,5 +58,15 @@ public class MainController implements Initializable {
                 i++;
             }
         }
+
+        imageView.setPreserveRatio(true);
+        //imageView.setFitHeight(Screen.getPrimary().getBounds().getHeight());
+        imageView.setFitWidth(Screen.getPrimary().getBounds().getWidth());
+
+        anchorPane.widthProperty().addListener((_, _, t1) -> gridPane.setPrefWidth(t1.doubleValue()));
+        anchorPane.heightProperty().addListener((_, _, t1) -> gridPane.setPrefHeight(t1.doubleValue()));
+
+        gridPane.setPrefWidth(anchorPane.widthProperty().get());
+        gridPane.setPrefHeight(anchorPane.heightProperty().get());
     }
 }
