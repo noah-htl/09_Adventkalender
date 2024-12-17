@@ -50,16 +50,28 @@ public class MainController implements Initializable {
         }
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        int i = 0;
+    public void setGodMode(boolean value) {
+        Door.godMode = value;
+        reload();
+    }
 
+    public void toggleGodMode() {
+        setGodMode(!Door.godMode);
+    }
+
+    private void reload() {
+        int i = 0;
         for(Node node : gridPane.getChildren()) {
             if (node instanceof Door door) {
                 door.setNumber(ints[i]);
                 i++;
             }
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        reload();
 
         imageView.setPreserveRatio(true);
         //imageView.setFitHeight(Screen.getPrimary().getBounds().getHeight());

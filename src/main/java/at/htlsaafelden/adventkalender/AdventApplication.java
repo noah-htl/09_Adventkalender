@@ -17,9 +17,15 @@ public class AdventApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), Screen.getPrimary().getBounds().getWidth(),
                                                    Screen.getPrimary().getBounds().getHeight());
 
+        MainController controller = fxmlLoader.getController();
+
         scene.addEventFilter(KeyEvent.KEY_PRESSED, (KeyEvent event) -> {
             if (event.getCode() == KeyCode.SPACE) {
                 SoundController.getInstance().toggle();
+            }
+
+            if (event.getCode() == KeyCode.F1) {
+                controller.toggleGodMode();
             }
             event.consume();
         });

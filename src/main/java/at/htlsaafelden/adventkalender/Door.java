@@ -41,6 +41,8 @@ public class Door extends AnchorPane {
     @FXML
     private BorderPane borderPane;
 
+    public static boolean godMode = false;
+
     private int number;
 
     private ObservableValueImpl<Boolean> open = new ObservableValueImpl<>(false);
@@ -131,6 +133,9 @@ public class Door extends AnchorPane {
     }
 
     private boolean canOpen() {
+        if(godMode) {
+            return true;
+        }
         Calendar calendar = Calendar.getInstance();
 
         if(calendar.get(Calendar.MONTH) == Calendar.DECEMBER && calendar.get(Calendar.DAY_OF_MONTH) >= this.number) {
