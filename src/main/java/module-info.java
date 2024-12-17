@@ -1,6 +1,7 @@
 module at.htlsaafelden.adventkalender {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.media;
 
 
     opens at.htlsaafelden.adventkalender to javafx.fxml;

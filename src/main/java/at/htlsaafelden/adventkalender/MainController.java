@@ -2,12 +2,14 @@ package at.htlsaafelden.adventkalender;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Screen;
@@ -68,5 +70,11 @@ public class MainController implements Initializable {
 
         gridPane.setPrefWidth(anchorPane.widthProperty().get());
         gridPane.setPrefHeight(anchorPane.heightProperty().get());
+
+        SoundController soundController = SoundController.getInstance();
+        soundController.add("02.mp3");
+        soundController.add("01.mp3");
+
+        soundController.play();
     }
 }
