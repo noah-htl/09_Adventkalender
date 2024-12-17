@@ -15,15 +15,12 @@ public class AdventApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), Screen.getPrimary().getBounds().getWidth(),
                                                    Screen.getPrimary().getBounds().getHeight());
 
-        stage.setTitle("Hello!");
+        stage.setTitle("HoHoHo!");
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) {
-        /*for (int i = 1; i <= 24; i++) {
-            System.out.println(WordleLoader.getDailyWordle(i));
-        }*/
         launch();
     }
 }

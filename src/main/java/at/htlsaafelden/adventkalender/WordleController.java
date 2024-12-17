@@ -4,6 +4,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
@@ -103,6 +104,9 @@ public class WordleController implements Initializable {
                     column = 0;
                     if(line >= 6) {
                         line = 6;
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setContentText("The correct word was: " + currentGame.getResult());
+                        alert.show();
                     }
 
                     Label newLabel = getLabel(line, column);

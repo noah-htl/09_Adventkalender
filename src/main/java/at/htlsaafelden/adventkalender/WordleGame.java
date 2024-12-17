@@ -54,6 +54,10 @@ public class WordleGame {
         return positions;
     }
 
+    public String getResult() {
+        return result;
+    }
+
     public record Position(Character character, CharacterType characterType) {
     }
 
