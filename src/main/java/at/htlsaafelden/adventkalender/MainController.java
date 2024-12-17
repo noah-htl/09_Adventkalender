@@ -84,6 +84,7 @@ public class MainController implements Initializable {
         gridPane.setPrefHeight(anchorPane.heightProperty().get());
 
         SoundController soundController = SoundController.getInstance();
+        soundController.add("03.mp3");
         soundController.add("02.mp3");
         soundController.add("01.mp3");
 
