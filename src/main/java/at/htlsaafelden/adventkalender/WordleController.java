@@ -105,7 +105,7 @@ public class WordleController implements Initializable {
                     if(line >= 6) {
                         line = 6;
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setContentText("The correct word was: " + currentGame.getResult());
+                        alert.setContentText("Das richtige Wort ist: " + currentGame.getResult());
                         alert.show();
                     }
 
@@ -139,7 +139,21 @@ public class WordleController implements Initializable {
                 case IN_WORD -> "in_word";
                 case NOT_USED -> "not_used";
             });
+
         }
+
+        for (int i = 0; i < 5; i++) {
+            if(positions[i].characterType() != WordleGame.CharacterType.CORRECT_POSITION) {
+                break;
+            }
+            if(i == 4) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText("Sehr gut");
+                alert.show();
+            }
+        }
+
+
     }
 
     public void setStage(Stage stage) {
