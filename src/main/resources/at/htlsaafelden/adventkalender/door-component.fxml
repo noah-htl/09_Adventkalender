@@ -5,12 +5,20 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
 
+<?import javafx.scene.image.Image?>
 <fx:root fx:id="root" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onClick" prefHeight="150.0" prefWidth="150.0" stylesheets="@door.css" type="AnchorPane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane fx:id="borderPane" prefHeight="150.0" prefWidth="150.0">
          <center>
-            <ImageView fx:id="imageView" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+            <StackPane>
+               <ImageView fx:id="imageView" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+               <ImageView opacity="0" fx:id="imageViewTop" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" rotate="45.0" translateX="20.0" BorderPane.alignment="CENTER" />
+               <ImageView opacity="0" fx:id="imageViewChain" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                  <Image url="@chains.png"/>
+               </ImageView>
+            </StackPane>
          </center>
          <bottom>
             <Label fx:id="label" text="???" BorderPane.alignment="TOP_CENTER">
