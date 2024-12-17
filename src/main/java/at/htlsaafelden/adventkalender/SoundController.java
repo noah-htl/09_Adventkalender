@@ -4,6 +4,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -28,6 +29,8 @@ public class SoundController {
     }
 
     public void play() {
+        Collections.shuffle(mediaList);
+
         final boolean[] nextSong = {true};
         this.mediaThread = new Thread(() -> {
             while (true) {
